@@ -1,0 +1,50 @@
+body {
+    height: 100%;
+    background-color: rgb(9, 19, 29) !important;
+}
+
+li {
+    position: relative;
+}
+
+.tech {
+    border-radius: 30px;  
+}
+
+.lang-ul {
+    list-style: none;
+}
+
+.lang::before {
+    content: "\2023";
+    margin-right: 1em;
+    color: #3be2ab;
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid #3be2ab;
+}
+
+.nav-link:active {
+    border-bottom: 3px solid #3be2ab
+}
+
+.sbu:hover {
+    box-shadow: 0 0 11px #3be2ab;
+}
+
+.skills {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.me {
+    box-shadow: 0 0 11px #3be2ab;
+    border-radius: 15px 50px;
+    overflow: hidden;
+}
+
+.json {
+    font-family: monospace !important;
+    font-size: x-large !important;
+}
