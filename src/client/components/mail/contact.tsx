@@ -9,31 +9,49 @@ export default class Contact extends React.Component<IContactProps, IContactStat
         this.state = {
             from: null,
             subject: null,
-            content: null
+            content: null,
+            status: null
         }
     }
 
-    private success: boolean = false;
+    private sending: boolean = false;
     private message: JSX.Element = null;
 
     async handleSubmit(e: any) {
         e.preventDefault();
-        if(this.success) return;
-        
+
+        if (this.sending) return;
+
+        let email: any = {
+            from: this.state.from,
+            subject: this.state.subject,
+            content: this.state.content
+        };
+
         try {
-            this.success = true;
-            await json('/api/contact', 'POST', this.state);
-            this.props.history.push('/')
+            this.sending = true;
+
+            let res = await json('/api/contact', 'POST', email);
+            if (res) {
+                this.setState({ status: 'Success' })
+                setTimeout(() => {
+                    this.props.history.push('/');
+                }, 8000);
+            } else {
+                this.setState({ status: 'Error' });
+            }
         } catch (e) {
-            console.log(e)
+            throw (e)
         }
     }
 
     render() {
 
-        if (this.success === true) {
+        if (this.state.status === 'Success') {
             this.message = <div className='alert alert-primary p-1 m-3' role='alert'>Thanks for reaching out! I'll be in touch with you shortly.</div>
-        };
+        } else if (this.state.status === 'Error') {
+            this.message = <div className='alert alert-primary p-1 m-3' role='alert'>Error in sending</div>
+        }
 
         return (
             <>
@@ -43,11 +61,11 @@ export default class Contact extends React.Component<IContactProps, IContactStat
                             <h1 className='text-primary mt-5'>Want to get in touch?</h1>
                             <form onSubmit={(e) => this.handleSubmit(e)}>
                                 <div className="form-group">
-                                    <label className='text-primary' htmlFor="name">Email:</label>
+                                    <label className='text-primary' htmlFor="email">Email:</label>
                                     <input type="email" id="email" className="form-control" placeholder="Your email" onChange={(e) => this.setState({ from: e.target.value })} />
                                 </div>
                                 <div className="form-group">
-                                    <label className='text-primary' htmlFor="email">Subject:</label>
+                                    <label className='text-primary' htmlFor="subject">Subject:</label>
                                     <input type="text" id="subject" className="form-control" placeholder='Subject' onChange={(e) => this.setState({ subject: e.target.value })} />
                                 </div>
                                 <div className="form-group">
@@ -59,16 +77,16 @@ export default class Contact extends React.Component<IContactProps, IContactStat
                             {this.message}
                         </div>
                     </section>
-
                 </main>
             </>
         )
     }
-}
+};
 
 interface IContactProps extends RouteComponentProps { };
 interface IContactState {
     from: string,
     subject: string,
-    content: string
+    content: string,
+    status: string
 };
