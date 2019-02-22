@@ -42,9 +42,22 @@ li {
     box-shadow: 0 0 11px #3be2ab;
     border-radius: 15px 50px;
     overflow: hidden;
+    width: 400px;
 }
 
 .json {
     font-family: monospace !important;
     font-size: x-large !important;
+}
+
+@media only screen and (max-width: 375px) {
+    .me {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .me {
+        width: 300px;
+    }
 }

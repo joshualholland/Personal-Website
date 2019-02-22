@@ -28,7 +28,7 @@ const About = () => {
                     <h5 className='json text-primary'>{']}'}</h5>
                 </div>
                 <div className='col-md-4' style={{ display: 'inline-block', verticalAlign: 'middle' }} >
-                    <img className='me' width='400' src='/images/profile.jpg' />
+                    <img className='me' src='/images/profile.jpg' />
                 </div>
             </div>
         </>
