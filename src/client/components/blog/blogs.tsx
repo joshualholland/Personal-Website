@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { json } from '../../utils/api';
+import  json  from '../../utils/api';
 import BlogPreview from './BlogPreview';
 
 export default class Blogs extends React.Component<IBlogsProps, IBlogsState> {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { json } from '../../utils/api';
+import json from '../../utils/api';
 import { RouteComponentProps } from 'react-router-dom';
 
 
@@ -9,7 +9,7 @@ export default class Contact extends React.Component<IContactProps, IContactStat
         this.state = {
             from: null,
             subject: null,
-            content: null,
+            html: null,
             status: null
         }
     }
@@ -25,7 +25,7 @@ export default class Contact extends React.Component<IContactProps, IContactStat
         let email: any = {
             from: this.state.from,
             subject: this.state.subject,
-            content: this.state.content
+            html: this.state.html
         };
 
         try {
@@ -36,7 +36,7 @@ export default class Contact extends React.Component<IContactProps, IContactStat
                 this.setState({ status: 'Success' })
                 setTimeout(() => {
                     this.props.history.push('/');
-                }, 8000);
+                }, 3000);
             } else {
                 this.setState({ status: 'Error' });
             }
@@ -70,7 +70,7 @@ export default class Contact extends React.Component<IContactProps, IContactStat
                                 </div>
                                 <div className="form-group">
                                     <label className='text-primary' htmlFor="message">Message:</label>
-                                    <textarea id="content" rows={4} className="form-control" onChange={(e) => this.setState({ content: e.target.value })} />
+                                    <textarea id="content" rows={4} className="form-control" onChange={(e) => this.setState({ html: e.target.value })} />
                                 </div>
                                 <button type="submit" className="btn btn-outline-primary">Contact Me!</button>
                             </form>
@@ -87,6 +87,6 @@ interface IContactProps extends RouteComponentProps { };
 interface IContactState {
     from: string,
     subject: string,
-    content: string,
+    html: string,
     status: string
 };

@@ -6,12 +6,12 @@ let mailgun = mailgunLoader({
     domain: config.mail.domain
 });
 
-const sendEmail = (to: string, from: string, subject: string, content: string) => {
+const sendEmail = (to: string, from: string, subject: string, html: string) => {
     let data = {
         to,
         from,
         subject,
-        text: content
+        html
     };
     return mailgun.messages().send(data);
 };

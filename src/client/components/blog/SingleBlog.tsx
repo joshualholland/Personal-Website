@@ -1,6 +1,6 @@
 import * as React from 'react';
 import moment from 'moment';
-import { json } from '../../utils/api';
+import  json  from '../../utils/api';
 import { Link, RouteComponentProps } from 'react-router-dom';
 
 export default class SingleBlog extends React.Component<ISingleProps, ISingleState> {
