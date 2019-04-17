@@ -10,7 +10,7 @@ const About = () => {
                     <h5 className='json text-primary mb-0'>{'{'} "Me": {'['}</h5>
                     <h5 className='json text-primary ml-2 mb-0'>{'{'}</h5>
                     <h5 className='json text-primary ml-4 mb-0'>"Name": <span className='json text-danger'>"Josh Holland",</span></h5>
-                    <h5 className='json text-primary ml-4 mb-0'>"Married": <span className='json text-white'>True,</span></h5>
+                    <h5 className='json text-primary ml-4 mb-0'>"Married": <span className='json text-white'>true,</span></h5>
                     <h5 className='json text-primary ml-4 mb-0'>"Age": <span className='json text-white'>25,</span></h5>
                     <h5 className='json text-primary ml-4 mb-0'>"Pets": {'['}</h5>
                     <h5 className='json text-danger ml-5 mb-0'>"Rory",</h5>
