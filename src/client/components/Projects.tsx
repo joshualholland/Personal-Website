@@ -8,7 +8,28 @@ const Projects = () => {
             <h1 className='text-primary mt-5'>Projects</h1>
             <hr className='bg-primary'></hr>
             <div>
-                <h3 className='text-primary'>Smash Bros. Ultimate Tournament Utility</h3>
+                <h3 className='text-primary'>Synesthesia Spotify</h3>
+                <ul className='lang-ul'>
+                    <li className='text-danger lang'>Takes user's Spotify data through Spotify's API and turns it into visual aids such as charts and graphs.</li>
+                    <li className='text-danger lang'>Custom made svg logos with animations.</li>
+                    <li className='text-danger lang'>Can alter the playback state from inside the application.</li>
+                    <li className='text-danger lang'>Tokens expire after 1 hour and refresh tokens can be requested.</li>
+                </ul>
+                <img className='col-md-3 mr-3 p-0 sbu' src='images/synesthesia.png' alt='Smash' height='200' width='300' />
+                <img className='col-md-3 p-0 sbu' src='images/genres.png' alt='Register' height='200' width='400' />
+                <div className='col-md-3' style={{ display: 'inline-block' }}>
+                    <span className='badge badge-primary text-secondary m-2'>JavaScript</span>
+                    <span className='badge badge-primary text-secondary m-2'>React</span>
+                    <span className='badge badge-primary text-secondary m-2'>Illustrator</span>
+                    <span className='badge badge-primary text-secondary m-2'>SVG</span>
+                    <span className='badge badge-primary text-secondary m-2'>Express</span>
+                    <span className='badge badge-primary text-secondary m-2'>CSS animations</span>
+                </div>
+                <div className='col-md-4'>
+                    <a className='mr-3' target='_blank' href='https://github.com/joshualholland/final-spotify-product'><FontAwesomeIcon icon={faEye} /> View Source Code</a>
+                    <a target='_blank' href='http://synesthesiaspotify.herokuapp.com'><FontAwesomeIcon icon={faEye} /> View Live Demo</a>
+                </div>
+                <h3 className='text-primary mt-5'>Smash Bros. Ultimate Tournament Utility</h3>
                 <ul className='lang-ul'>
                     <li className='text-danger lang'>Built to help professional Smash Bros. Tournament Operators with running tournaments.</li>
                     <li className='text-danger lang'>Walks players through rules for stage striking and allows them to strike stages via my application.</li>
